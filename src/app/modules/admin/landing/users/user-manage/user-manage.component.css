@@ -1,0 +1,22 @@
+.form-group{
+  margin-bottom: 8px;
+}
+.close-icon{
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.add-btn{
+  width: unset !important;
+}
+.btn-primary , .btn-outline-primary{
+  width: 95px;
+  white-space: nowrap;
+  margin-right: 8px;
+}

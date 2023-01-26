@@ -1,0 +1,21 @@
+<ng-template #content let-modal>
+  <div class="modal-header justify-content-center">
+    <h4 class="m-0">{{ header }}</h4>
+  </div>
+  <div class="modal-body">
+    <ng-content></ng-content>
+  </div>
+  <div class="modal-footer">
+    <button
+      *ngFor="let action of actions"
+      [ngClass]="action.styleClass"
+      (click)="onClick(action.action)"
+    >
+      {{ action.display }}
+    </button>
+  </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)" #openBtn hidden>
+  Launch demo modal
+</button>

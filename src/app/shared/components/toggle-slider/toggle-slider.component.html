@@ -1,0 +1,8 @@
+<div class="slider-container position-relative" (click)="toggle()">
+  <div
+    class="circle-handler position-absolute"
+    [ngClass]="{ enabled: isToggled }"
+  ></div>
+
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,79 @@
+<div class="table-container">
+  <table class="table">
+    <!-- Table Head -->
+    <thead>
+      <tr>
+        <th
+          scope="col"
+          *ngFor="let column of tableData?.columns | keyvalue : columnOrder"
+          [ngSwitch]="column?.value?.type"
+        >
+          <!-- Default case (text) -->
+          <div *ngSwitchDefault>
+            {{ column?.value?.name }}
+          </div>
+          <!-- Default case (text) -->
+        </th>
+      </tr>
+    </thead>
+    <!-- Table Head -->
+
+    <!-- Table Body -->
+    <tbody>
+      <ng-container *ngFor="let row of tableData?.rows; index as i">
+        <tr>
+          <td
+            *ngFor="
+              let column of tableData?.columns | keyvalue : columnOrder;
+              index as c
+            "
+            [ngSwitch]="column?.value?.type"
+          >
+            <!-- Default case (text) -->
+            <div *ngSwitchDefault>
+              {{ row[column.key] }}
+            </div>
+
+            <!-- Default case (text) -->
+            <div *ngSwitchCase="'date'">
+              {{ row[column.key] | date : "dd/MM/yyyy - hh:mm aaa" }}
+            </div>
+
+            <div
+              *ngSwitchCase="'status'"
+              class="bg-{{ row[column.key] | lowercase }} status"
+            >
+              <span>
+                {{ row[column.key] }}
+              </span>
+            </div>
+            <div *ngSwitchCase="'hyperlink'">
+              <a [routerLink]="[column?.value?.state, row[column.key]._id]">
+                {{ row[column.key].display | titlecase}}
+              </a>
+            </div>
+            <div *ngSwitchCase="'actions'">
+              <button
+                (click)="onEditRow(row)"
+                class="icon-btn me-2"
+                *ngIf="column?.value?.options?.includes('Edit')"
+              >
+                <!-- <img [srcset]="icons.edit" alt="edit-icon" /> -->
+                <fa-icon [icon]="fontIcons.edit"></fa-icon>
+              </button>
+              <button
+                (click)="onDeleteRow(row)"
+                class="icon-btn me-2"
+                *ngIf="column?.value?.options?.includes('Delete')"
+              >
+                <fa-icon [icon]="fontIcons.delete"></fa-icon>
+                <!-- <img [srcset]="icons.delete" alt="delete-icon" /> -->
+              </button>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+    <!-- Table Body -->
+  </table>
+</div>

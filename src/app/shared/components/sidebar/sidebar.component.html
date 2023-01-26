@@ -1,0 +1,62 @@
+<!-- <div class="side-bar border border-1" [ngClass]="{ opened: sideBarStatus }"> -->
+<!-- <h4 class="text-center border-bottom mt-2 pb-2" *ngIf="!sideBarStatus">L</h4> -->
+<!-- Add Animation to show full text -->
+<!-- <h4
+    routerLink=""
+    class="text-center border-bottom mt-2 pb-2"
+    *ngIf="sideBarStatus"
+  >
+    Admin Panel
+  </h4>
+
+  <div class="link-container">
+    <ul class="p-0">
+      <li
+        class="d-flex align-items-center position-relative ps-2"
+        *ngFor="let page of sideBarLinks"
+        [routerLink]="page.link"
+        routerLinkActive="active"
+      >
+        <img
+          class="page-icon"
+          [ngClass]="{ 'menu-opened': sideBarStatus }"
+          [srcset]="page.icon"
+          [alt]="page.id"
+        />
+
+        <span [ngClass]="{ 'menu-opened': !sideBarStatus }">
+          {{ page.display }}
+        </span>
+      </li>
+    </ul>
+  </div>
+</div> -->
+
+<div class="sidebar-menu" [ngClass]="{ opened: sideBarStatus }">
+  <div class="sidebar-header border-bottom border">
+    <div class="logo">
+      <a routerLink="/admin-panel"
+        ><img src="assets/images/icon/logo.png" alt="logo"
+      /></a>
+    </div>
+  </div>
+  <div class="main-menu">
+    <div class="menu-inner">
+      <nav>
+        <ul class="p-0 metismenu" id="menu">
+          <li
+            class="d-flex align-items-center position-relative ps-2"
+            *ngFor="let page of sideBarLinks"
+            [routerLink]="page.link"
+            routerLinkActive="active"
+          >
+            <fa-icon class="icon" [ngClass]="{'menu-opened' : sideBarStatus}" [icon]="page.icon"></fa-icon>
+            <span [ngClass]="{ 'menu-opened': !sideBarStatus }">
+              {{ page.display }}
+            </span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+.slider-container {
+  width: 40px;
+  height: 17px;
+  background-color: #e9e7e7;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.circle-handler {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  left: 2px;
+  top: -1px;
+  background-color: #ccc;
+  transition: 0.3s ease;
+}
+
+.circle-handler.enabled {
+  background-color: green;
+  transform: translateX(17px);
+}

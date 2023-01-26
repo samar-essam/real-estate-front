@@ -1,0 +1,23 @@
+.navbar {
+  transition: 0.3s ease;
+}
+.navbar.opened {
+  margin-left: 200px;
+}
+
+.navbar.closed {
+  margin-left: 50px;
+}
+
+.menu-icon,
+.exit-icon {
+  cursor: pointer;
+  height: 32px;
+  width: 32px;
+  filter: invert(95%) sepia(100%) saturate(7%) hue-rotate(304deg)
+    brightness(106%) contrast(100%);
+}
+
+.menu-icon {
+  margin-right: 12px;
+}

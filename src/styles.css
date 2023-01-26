@@ -1,0 +1,66 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "ngx-toastr/toastr";
+:root {
+  --error: #d0021b;
+}
+
+/* Global Styles */
+
+/* Fonts */
+.font-12 {
+  font-size: 12px;
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.font-18 {
+  font-size: 18px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.font-22 {
+  font-size: 22px;
+}
+.font-24 {
+  font-size: 24px;
+}
+/* Fonts */
+
+/* Font Weights */
+
+.font-semi-bold {
+  font-weight: 600;
+}
+.font-bold {
+  font-weight: 700;
+}
+.font-bolder {
+  font-weight: 800;
+}
+/* Font Weights */
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.is-invalid {
+  border-color: var(--error) !important;
+}
+
+.bg-disabled {
+  background-color: #b9b9b9;
+}
+.bg-enabled {
+  background-color: #81c867;
+}
+
+.invalid-feedback {
+  font-size: 12px;
+  color: var(--error);
+  margin-top: 5px;
+}
+/* Global Styles */

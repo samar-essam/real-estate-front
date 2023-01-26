@@ -1,0 +1,25 @@
+<div>
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <p class="m-0 font-bold font-18">Users List</p>
+    <button
+      class="btn btn-outline-primary"
+      routerLink="/admin-panel/user-manage"
+    >
+      Create User
+    </button>
+  </div>
+  <app-table
+    [tableData]="tableData"
+    (onEdit)="onEdit($event)"
+    (onDelete)="onDelete($event)"
+  >
+  </app-table>
+</div>
+
+<app-modal
+  [header]="'Delete User'"
+  [actions]="modalActions"
+  (onAction)="handleAction($event)"
+>
+  <app-delete-modal #deleteModal></app-delete-modal>
+</app-modal>
